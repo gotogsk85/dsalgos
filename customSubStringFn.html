@@ -1,1 +1,35 @@
-<html></html>
+<html>
+	<script type="text/javascript">
+    /*
+      This function substringS checks if a substring (from now referred to as checkStr) matches a given mainString and returns true or false accordingly
+      Logic explained : 
+      -- Looping through the mainString till mainString.length - checkStr.length iterations, because
+      -- of the reason that we need to check if starting charachter and ending charachter matches
+      -- if above point matched, use an inner for loop and match the consecutive main string values with the checkStr values
+      -- if all values match then return true else return false;
+      -- NOTE : STRONG VISUALISATION OF THIS PROBLEM IS REQUIRED
+      -- open the console to check the output and if any doubt arises use the chrome-dev-tools-debugger
+    */
+		String.prototype.substringS = function(mainString){
+			var strlen = this.length, checkSubStr = false, limit = mainString.length - this.length;
+			for(var c = 0; c <= limit; c++){
+				if(mainString[c] == this[0] && mainString[c + (this.length - 1)] == this[this.length - 1]){
+					var e = 0;
+					for(var d = 0; d < this.length; d++){
+						if(this[d] !== mainString[c + e]){
+							checkSubStr = false;
+							c = limit;
+							break ;							
+						}else {
+							checkSubStr = true;
+							e++;
+						}
+					}
+				}
+			}
+			console.log(checkSubStr);
+		}
+		var s = "bcde";
+		s.substringS("aaabdeaghibce");
+	</script>
+</html>
