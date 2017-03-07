@@ -1,0 +1,24 @@
+<html>
+	<script> 
+		/*
+		find min number and create map having "keys" as array values and "value" as blank
+		*/
+		var a = [11, 12, 200, 2000, 14, 15], map = {}, min="", missingNum = "";
+		for(var c = 0; c < a.length; c++){
+			var num = a[c], numStr = num.toString();
+			min = min === "" ? num : min < a[c] ? min : a[c];
+			map[numStr] = "";
+		}
+		/*
+		start looping from the min value, till min value + a.length .. why ? because u need the missing minimum value
+		if that value is not there is the map then break from the loop and u got the missing minimum value
+		*/
+		for(var d = min; d <= (min + a.length); d++){
+			if(!map[d] && map[d] != ""){
+				missingNum = d
+				break;
+			}
+		}
+		console.log(missingNum);
+	</script>
+</html>
