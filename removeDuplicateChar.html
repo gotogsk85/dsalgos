@@ -1,0 +1,15 @@
+<html>
+	<script>
+	// from this output we can find nth unique charachter in a string
+		removeDuplicateChar('Learn more javascript dude');
+		function removeDuplicateChar(str){
+			var unq = [];
+			for(var c = 0; c < str.length; c++){
+				if(str.indexOf(str[c]) == str.lastIndexOf(str[c])) {
+					unq.push(str[c]);
+				}
+			}
+			console.log(unq.join(''));
+		}
+	</script>
+</html>
